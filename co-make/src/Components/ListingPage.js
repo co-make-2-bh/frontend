@@ -1,10 +1,16 @@
 import React from "react";
+import ListingCard from "./ListingCard";
 
 ////////////////////////
 //      LISTINGS      //
 ////////////////////////
 function ListingPage() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>Hi I am the listing page and I render multiple listing cards</h1>
+      <ListingCard />
+    </div>
+  );
 }
 
 export default ListingPage;

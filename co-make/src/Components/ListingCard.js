@@ -4,7 +4,11 @@ import React from "react";
 //      LISTING CARD      //
 ////////////////////////////
 function ListingCard() {
-  return <div></div>;
+  return (
+    <div>
+      <h4>Hi I am the listing card</h4>
+    </div>
+  );
 }
 
 export default ListingCard;
