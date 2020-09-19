@@ -11,7 +11,6 @@ const HeaderStyle = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: #57abe0;
 `;
 
 ///////////////////////////

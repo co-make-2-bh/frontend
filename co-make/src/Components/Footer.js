@@ -11,7 +11,7 @@ const FooterStyle = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #57abe0;
+  background-color: white;
 `;
 
 //////////////////////////

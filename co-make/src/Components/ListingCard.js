@@ -8,7 +8,10 @@ import styled from "styled-components";
 const CardStyle = styled.div`
   width: 500px;
   height: 500px;
-  border: solid blue;
+  background-color: white;
+  border-radius: 2%;
+  box-shadow: 3px 3px 8px 0.1px gray;
+  text-align: center;
 `;
 /////////////////////////
 //      CARD CODE      //
@@ -28,7 +31,12 @@ const CardStyle = styled.div`
 function ListingCard() {
   return (
     <CardStyle>
-      <h4>Hi I am the listing card</h4>
+      <h3>Build a wall!</h3>
+      <p>Date Posted: 9/19/20</p>
+      <p>The park fence is broken!</p>
+      <p>Voiced by Andrew Collins</p>
+      <p>8 votes</p>
+      <button>Upvote</button>
     </CardStyle>
   );
 }

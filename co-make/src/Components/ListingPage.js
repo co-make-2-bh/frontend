@@ -6,9 +6,11 @@ import styled from "styled-components";
 //      LISTING STYLE      //
 /////////////////////////////
 const ListingStyle = styled.div`
+  height: 90%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #ededed;
 `;
 
 ////////////////////////////
@@ -17,7 +19,8 @@ const ListingStyle = styled.div`
 function ListingPage() {
   return (
     <ListingStyle>
-      <h1>Hi I am the listing page and I render multiple listing cards</h1>
+      <h1>Community Listing Page</h1>
+      <p>Welcome to the community! Let your voice be heard.</p>
       <ListingCard />
     </ListingStyle>
   );
