@@ -1,5 +1,9 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,19 +15,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+}`;
 
-.header {
-  height: 100px;
-  width: 99%;
-  border: solid yellow;
-}
-
-.footer {
-  height: 50px;
-  border: solid yellow;
-  padding: 1% 0;
-  position: absolute;
-  bottom: 0;
-  width: 99%;
-}
+export default GlobalStyle;

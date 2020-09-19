@@ -1,13 +1,29 @@
 import React from "react";
+import styled from "styled-components";
 
-//////////////////////
-//      HEADER      //
-//////////////////////
+////////////////////////////
+//      HEADER STYLE      //
+////////////////////////////
+
+const HeaderStyle = styled.div`
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #57abe0;
+`;
+
+///////////////////////////
+//      HEADER CODE      //
+///////////////////////////
+
 function Header() {
   return (
-    <div className="header">
-      <h1>Hello I am the header</h1>
-    </div>
+    <HeaderStyle>
+      <h1>Logo</h1>
+      <nav>Nav</nav>
+    </HeaderStyle>
   );
 }
 
