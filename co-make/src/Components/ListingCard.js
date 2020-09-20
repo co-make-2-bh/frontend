@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import Upvote from "./Upvote";
-import axiosWithAuth from "../utils/axiosWithAuth";
+//import axiosWithAuth from "../utils/axiosWithAuth";
 ////////////////////////////
 //      CARD STYLE      //
 ////////////////////////////
@@ -30,7 +30,7 @@ const TextItem = styled.div`
 /////////////////////////
 
 function ListingCard(props) {
-  const {} = props;
+  //const {} = props;
   const [upvote, setUpvote] = useState(0);
   const history = useHistory();
 
@@ -40,7 +40,8 @@ function ListingCard(props) {
   };
 
   const deleteIssue = () => {
-    // console.log("delete", )
+    console.log("delete");
+    history.push("/listings");
     // axiosWithAuth()
     //   .delete(`/api/listing/${id}`)
     //   .then(() => {
@@ -71,7 +72,7 @@ function ListingCard(props) {
       </TextItem>
       <TextItem>
         <button onClick={editIssue}>Edit</button>
-        <button>Delete</button>
+        <button onClick={deleteIssue}>Delete</button>
       </TextItem>
     </CardStyle>
   );

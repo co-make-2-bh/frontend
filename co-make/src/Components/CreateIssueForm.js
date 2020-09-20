@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
-import axiosWithAuth from "../utils/axiosWithAuth";
-import { ContextObject } from "../contexts/context";
+// import axiosWithAuth from "../utils/axiosWithAuth";
+// import { ContextObject } from "../contexts/context";
 import { CardStyle } from "./ListingCard";
 import { ListingStyle, StyledH1 } from "./ListingPage";
 
