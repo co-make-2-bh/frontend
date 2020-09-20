@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import careIcon from "../assets/care-icon.png";
+import NavbarMenu from "./NavbarMenu";
 ////////////////////////////
 //      HEADER STYLE      //
 ////////////////////////////
@@ -12,7 +13,7 @@ const HeaderStyle = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1% 2%;
-  height: 25px;
+  height: 55px;
   background-image: linear-gradient(#21333e, ghostwhite);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -33,8 +34,7 @@ function Header() {
       <NavLink to="/listings">
         <ImageStyle src={careIcon} alt="" />
       </NavLink>
-
-      <nav>Nav</nav>
+      <NavbarMenu />
     </HeaderStyle>
   );
 }
