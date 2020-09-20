@@ -6,21 +6,30 @@ import styled from "styled-components";
 //      LISTING STYLE      //
 /////////////////////////////
 const ListingStyle = styled.div`
-  height: 90%;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #ededed;
+  color: #21333e;
 `;
 
+export const StyledH1 = styled.h1`
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  padding-top: 2%;
+  color: #21333e;
+  text-align: center;
+`;
 ////////////////////////////
 //      LISTING CODE      //
 ////////////////////////////
 function ListingPage() {
   return (
     <ListingStyle>
-      <h1>Community Listing Page</h1>
+      <StyledH1>Community Listing Page.</StyledH1>
       <p>Welcome to the community! Let your voice be heard.</p>
+      <ListingCard />
       <ListingCard />
     </ListingStyle>
   );

@@ -2,13 +2,13 @@ import axios from "axios";
 /////////////////////
 //      AXIOS      //
 /////////////////////
-export const axiosWithAuth = () => {
-  const token = window.localStorage.getItem("token");
+const axiosWithAuth = () => {
   return axios.create({
     headers: {
-      Authorization: token,
+      Authorization: window.localStorage.getItem("token"),
     },
-    baseURL: "http://localhost:5000",
+    baseURL: "",
   });
   //add other axios items here - .post .put .delete etc
 };
+export default axiosWithAuth;

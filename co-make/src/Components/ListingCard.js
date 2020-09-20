@@ -7,11 +7,20 @@ import styled from "styled-components";
 
 const CardStyle = styled.div`
   width: 500px;
-  height: 500px;
-  background-color: white;
-  border-radius: 2%;
-  box-shadow: 3px 3px 8px 0.1px gray;
-  text-align: center;
+  padding: 40px;
+  margin-bottom: 2%;
+  background-color: #228283;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: #21333e;
+`;
+
+const TextItem = styled.div`
+  ${"" /* display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; */}
 `;
 /////////////////////////
 //      CARD CODE      //
@@ -31,12 +40,24 @@ const CardStyle = styled.div`
 function ListingCard() {
   return (
     <CardStyle>
-      <h3>Build a wall!</h3>
-      <p>Date Posted: 9/19/20</p>
-      <p>The park fence is broken!</p>
-      <p>Voiced by Andrew Collins</p>
+      <TextItem>
+        <h4>Title: </h4>
+        <p>Build a wall!</p>
+      </TextItem>
+      <TextItem>
+        <h4>Date Posted: </h4>
+        <p>9/19/20</p>
+      </TextItem>
+      <TextItem>
+        <h4>Description: </h4>
+        <p>The park fence is broken!</p>
+      </TextItem>
       <p>8 votes</p>
       <button>Upvote</button>
+      <TextItem>
+        <p>Concern voiced by: </p>
+        <p> Andrew Collins</p>
+      </TextItem>
     </CardStyle>
   );
 }

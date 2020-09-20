@@ -8,10 +8,10 @@ import styled from "styled-components";
 const FooterStyle = styled.div`
   height: 50px;
   padding: 1% 0;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: white;
+  background-color: #21333e;
 `;
 
 //////////////////////////
