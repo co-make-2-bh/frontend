@@ -5,8 +5,9 @@ import styled from "styled-components";
 //      CARD STYLE      //
 ////////////////////////////
 
-const CardStyle = styled.div`
+export const CardStyle = styled.div`
   width: 500px;
+  height: 600px;
   padding: 40px;
   margin-bottom: 2%;
   background-color: #228283;
@@ -25,17 +26,6 @@ const TextItem = styled.div`
 /////////////////////////
 //      CARD CODE      //
 /////////////////////////
-
-// useEffect(() => {
-//     axios.get(``)
-//     // .then((res) => {
-//     //   console.log(res.data);
-//     //   setListItem(res.data);
-//     // })
-//     // .catch((error) => {
-//     //   console.log("Error retrieving data");
-//     // });
-//   }, []);
 
 function ListingCard() {
   return (

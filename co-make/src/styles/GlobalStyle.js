@@ -18,7 +18,7 @@ body {
 
 }
 
-h4 {
+h4, label {
     ${"" /* border: 1px solid ghostwhite; */}
     display: inline-block;
     color: #FFFFFF;
@@ -34,13 +34,12 @@ h4 {
 
 button {
   background-color:#cce3dd;
-  width: 120px;
   color: #21333e;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1px;
   border: none;
-  padding: 2%;
+  padding: 10px 12px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
