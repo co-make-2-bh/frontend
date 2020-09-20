@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
 
-import Header from "./components/Header";
+import Header from "./components/Header.js";
 
 import ListingPage from "./components/ListingPage";
 import { ContextObject } from "./contexts/context";
