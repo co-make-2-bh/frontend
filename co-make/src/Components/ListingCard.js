@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-
+import Upvote from "./Upvote";
 ////////////////////////////
 //      CARD STYLE      //
 ////////////////////////////
@@ -28,6 +28,8 @@ const TextItem = styled.div`
 /////////////////////////
 
 function ListingCard() {
+  const [upvote, setUpvote] = useState(0);
+
   return (
     <CardStyle>
       <TextItem>
@@ -42,8 +44,8 @@ function ListingCard() {
         <h4>Description: </h4>
         <p>The park fence is broken!</p>
       </TextItem>
-      <p>8 votes</p>
-      <button>Upvote</button>
+      <p>{upvote} votes</p>
+      <Upvote upvote={upvote} setUpvote={setUpvote} />
       <TextItem>
         <p>Concern voiced by: </p>
         <p> Andrew Collins</p>
