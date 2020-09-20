@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
 
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+
 import ListingPage from "./components/ListingPage";
 import { ContextObject } from "./contexts/context";
-import axiosWithAuth from "./utils/axiosWithAuth";
 
 import { StyledH1 } from "./components/ListingPage";
 
