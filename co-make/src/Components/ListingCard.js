@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-
+import Upvote from "./Upvote";
 ////////////////////////////
 //      CARD STYLE      //
 ////////////////////////////
 
-const CardStyle = styled.div`
+export const CardStyle = styled.div`
   width: 500px;
+  height: 600px;
   padding: 40px;
   margin-bottom: 2%;
   background-color: #228283;
@@ -26,18 +27,9 @@ const TextItem = styled.div`
 //      CARD CODE      //
 /////////////////////////
 
-// useEffect(() => {
-//     axios.get(``)
-//     // .then((res) => {
-//     //   console.log(res.data);
-//     //   setListItem(res.data);
-//     // })
-//     // .catch((error) => {
-//     //   console.log("Error retrieving data");
-//     // });
-//   }, []);
-
 function ListingCard() {
+  const [upvote, setUpvote] = useState(0);
+
   return (
     <CardStyle>
       <TextItem>
@@ -52,8 +44,8 @@ function ListingCard() {
         <h4>Description: </h4>
         <p>The park fence is broken!</p>
       </TextItem>
-      <p>8 votes</p>
-      <button>Upvote</button>
+      <p>{upvote} votes</p>
+      <Upvote upvote={upvote} setUpvote={setUpvote} />
       <TextItem>
         <p>Concern voiced by: </p>
         <p> Andrew Collins</p>
