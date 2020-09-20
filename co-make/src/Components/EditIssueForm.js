@@ -1,11 +1,22 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { CardStyle } from "./ListingCard";
-import { ListingStyle } from "./ListingPage";
+import { ListingStyle, StyledH1 } from "./ListingPage";
 
 export default function EditIssueForm() {
+  const history = useHistory();
+
   return (
     <ListingStyle>
+      <StyledH1>Edit Issue</StyledH1>
       <CardStyle>
+        <button
+          onClick={() => {
+            history.push("/listings");
+          }}
+        >
+          Back
+        </button>
         <form>
           <label htmlFor="title">
             Title:

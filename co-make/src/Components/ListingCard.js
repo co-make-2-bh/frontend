@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import Upvote from "./Upvote";
+import axiosWithAuth from "../utils/axiosWithAuth";
 ////////////////////////////
 //      CARD STYLE      //
 ////////////////////////////
@@ -16,19 +18,36 @@ export const CardStyle = styled.div`
   border-radius: 10px;
   color: #21333e;
 `;
-
 const TextItem = styled.div`
   ${"" /* display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center; */}
 `;
+
 /////////////////////////
 //      CARD CODE      //
 /////////////////////////
 
-function ListingCard() {
+function ListingCard(props) {
+  const {} = props;
   const [upvote, setUpvote] = useState(0);
+  const history = useHistory();
+
+  const editIssue = (event) => {
+    //event.preventDefault();
+    history.push(`/editIssue`);
+  };
+
+  const deleteIssue = () => {
+    // console.log("delete", )
+    // axiosWithAuth()
+    //   .delete(`/api/listing/${id}`)
+    //   .then(() => {
+    //     history.push("/listings");
+    //   })
+    //   .catch((err) => err);
+  };
 
   return (
     <CardStyle>
@@ -49,6 +68,10 @@ function ListingCard() {
       <TextItem>
         <p>Concern voiced by: </p>
         <p> Andrew Collins</p>
+      </TextItem>
+      <TextItem>
+        <button onClick={editIssue}>Edit</button>
+        <button>Delete</button>
       </TextItem>
     </CardStyle>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import ListingCard from "./ListingCard";
 import styled from "styled-components";
 
@@ -25,17 +26,18 @@ export const StyledH1 = styled.h1`
 //      LISTING CODE      //
 ////////////////////////////
 
-const editIssue = (event) => {
-  //   event.preventDefault();
-  // history.push(`/editIssue/${issue.issueId}`);
-};
+function ListingPage(props) {
+  const history = useHistory();
 
-function ListingPage() {
+  const addIssue = () => {
+    history.push("/createIssue");
+  };
+
   return (
     <ListingStyle>
       <StyledH1>Community Listing Page.</StyledH1>
       <p>Welcome to the community! Let your voice be heard.</p>
-      <button onClick={editIssue(/*issue.issueId*/)}>Add an issue</button>
+      <button onClick={addIssue}>Add an issue</button>
       <ListingCard />
       <ListingCard />
     </ListingStyle>

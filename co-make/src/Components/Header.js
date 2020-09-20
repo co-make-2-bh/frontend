@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import careIcon from "../assets/care-icon.png";
 ////////////////////////////
@@ -19,15 +20,9 @@ const HeaderStyle = styled.div`
 `;
 
 const ImageStyle = styled.img`
-  width: 50px;
   height: 50px;
 `;
 
-const LogoStyle = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
 ///////////////////////////
 //      HEADER CODE      //
 ///////////////////////////
@@ -35,10 +30,10 @@ const LogoStyle = styled.div`
 function Header() {
   return (
     <HeaderStyle>
-      <LogoStyle>
+      <NavLink to="/listings">
         <ImageStyle src={careIcon} alt="" />
-        <h1>Co-Make</h1>
-      </LogoStyle>
+      </NavLink>
+
       <nav>Nav</nav>
     </HeaderStyle>
   );
