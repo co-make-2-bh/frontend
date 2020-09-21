@@ -5,11 +5,9 @@ import GlobalStyle from "./styles/GlobalStyle";
 import App from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <>
-      <GlobalStyle />
-      <App className="app" />
-    </>
-  </React.StrictMode>,
+  <>
+    <GlobalStyle />
+    <App className="app" />
+  </>,
   document.getElementById("root")
 );

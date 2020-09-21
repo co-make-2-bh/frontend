@@ -20,13 +20,19 @@ const NavbarMenu = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink to="/listings">Listing</NavLink>
+              <NavLink href="/listings" style={{ cursor: "pointer" }}>
+                Listing
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/createIssue">Add New Issue</NavLink>
+              <NavLink href="/createIssue" style={{ cursor: "pointer" }}>
+                Add New Issue
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="">Logout</NavLink>
+              <NavLink href="/" style={{ cursor: "pointer" }}>
+                Logout
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>
