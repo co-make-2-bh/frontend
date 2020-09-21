@@ -47,7 +47,10 @@ const history = useHistory();
     evt.preventDefault();
     axios
       .post("", formValues)
-      .then((res) => {})
+      .then((res) => {
+        history.push('/')
+
+      })
       .catch((err) => {
         console.log(err);
       })
@@ -55,7 +58,6 @@ const history = useHistory();
         setFormValues(initialValues);
     });
     console.log(formValues);
-    history.push('/')
   };
 
 
