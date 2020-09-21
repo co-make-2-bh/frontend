@@ -7,6 +7,7 @@ import CreateIssueForm from "./components/CreateIssueForm";
 import EditIssueForm from "./components/EditIssueForm";
 import ListingPage from "./components/ListingPage";
 import Login from './components/LoginForm';
+import Register from './components/RegisterForm';
 import { ContextObject } from "./contexts/context";
 import { StyledH1 } from "./components/ListingPage";
 
@@ -35,6 +36,9 @@ function App() {
         <Route exact path="/">
           <StyledH1>Login Page</StyledH1>
           <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
         </Route>
         <PrivateRoute path="/listings" component={ListingPage} />
         <PrivateRoute exact path="/createIssue" component={CreateIssueForm} />

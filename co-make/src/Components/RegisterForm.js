@@ -2,17 +2,21 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import formSchema from "../Validation/formSchema";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-const Login = (props) => {
-  /////INITAL STATES/////
+const Register = (props) => {
+const history = useHistory();
+  
+    /////INITAL STATES/////
   const initialValues = {
     username: "",
+    fullName: "",
     password: "",
   };
 
   const initialErrors = {
     username: "",
+    fullName: "",
     password: "",
   };
 
@@ -49,8 +53,9 @@ const Login = (props) => {
       })
       .finally(() => {
         setFormValues(initialValues);
-      });
+    });
     console.log(formValues);
+    history.push('/')
   };
 
 
@@ -67,6 +72,17 @@ const Login = (props) => {
       <label>
         <input
           type="text"
+          name="fullName"
+          placeholder="enter full name"
+          value={formValues.fullName}
+          onChange={onChange}
+        />
+      </label>
+      <br></br>
+
+      <label>
+        <input
+          type="text"
           name="username"
           placeholder="username"
           value={formValues.username}
@@ -74,6 +90,7 @@ const Login = (props) => {
         />
       </label>
       <br></br>
+
       <label>
         <input
           type="password"
@@ -84,13 +101,9 @@ const Login = (props) => {
         />
       </label>
       <br></br>
-      <button type="submit" disabled={buttonDisabled}>
-        Login
-      </button>
-      <Link to="/register">
-      <button>Register</button>
-      </Link>
+      <button disabled={buttonDisabled}>Register</button>
       <div className="errors">
+        <p>{errors.fullName}</p>
         <p>{errors.username}</p>
         <p>{errors.password}</p>
       </div>
@@ -98,4 +111,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Register;
