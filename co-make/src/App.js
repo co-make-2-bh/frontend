@@ -2,15 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
 
-import Header from "./components/Header";
-import CreateIssueForm from "./components/CreateIssueForm";
-import EditIssueForm from "./components/EditIssueForm";
-import ListingPage from "./components/ListingPage";
-import Login from './components/LoginForm';
-import Register from './components/RegisterForm';
+import Header from "./Components/Header";
+import CreateIssueForm from "./Components/CreateIssueForm";
+import EditIssueForm from "./Components/EditIssueForm";
+import ListingPage from "./Components/ListingPage";
+import Login from "./Components/LoginForm";
+import Register from "./Components/RegisterForm";
 import { ContextObject } from "./contexts/context";
-import { StyledH1 } from "./components/ListingPage";
-
+import { StyledH1 } from "./Components/ListingPage";
 
 function App() {
   // axiosWithAuth()
