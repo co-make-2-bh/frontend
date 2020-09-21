@@ -20,7 +20,7 @@ const NavbarMenu = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink to="/listings">Listings</NavLink>
+              <NavLink to="/listings">Listing</NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/createIssue">Add New Issue</NavLink>
