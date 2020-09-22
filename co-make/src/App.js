@@ -9,7 +9,8 @@ import ListingPage from "./Components/ListingPage";
 import Login from "./Components/LoginForm";
 import Register from "./Components/RegisterForm";
 import { ContextObject } from "./contexts/context";
-import { StyledH1 } from "./Components/ListingPage";
+// import { StyledH1 } from "./Components/ListingPage";
+import { StyledH1 } from './styles/EverythingElseStyles';
 
 function App() {
   // axiosWithAuth()

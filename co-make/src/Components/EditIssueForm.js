@@ -1,7 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { CardStyle } from "./ListingCard";
-import { ListingStyle, StyledH1 } from "./ListingPage";
+
+import { CardStyle, ListingStyle, StyledH1 } from '../styles/EverythingElseStyles'
+
+// import { CardStyle } from "./ListingCard";
+// import { ListingStyle, StyledH1 } from "./ListingPage";
 
 export default function EditIssueForm() {
   const history = useHistory();

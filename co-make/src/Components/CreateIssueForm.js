@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 // import axiosWithAuth from "../utils/axiosWithAuth";
 // import { ContextObject } from "../contexts/context";
-import { CardStyle } from "./ListingCard";
-import { ListingStyle, StyledH1 } from "./ListingPage";
+import { CardStyle, ListingStyle, StyledH1 } from '../styles/EverythingElseStyles';
+
+// import { CardStyle } from "./ListingCard"; to be delted
+// import { ListingStyle, StyledH1 } from "./ListingPage"; to be deleted
+
 import * as yup from "yup";
 import IssueSchema from '../Validation/IssueSchema';
 import axios from "axios";
