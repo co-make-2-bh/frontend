@@ -1,5 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
+////////////////////////////
+//     PRIMARY COLORS    //
+////////////////////////////
+export const colorObj = {
+  lightBlue: '#cce3dd',
+  midBlue: '#228283',  
+  darkBlue: '#21333e',
+}
+
 const GlobalStyle = createGlobalStyle`
 
 html, body, #root, #app{
