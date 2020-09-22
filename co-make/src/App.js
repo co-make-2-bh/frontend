@@ -41,7 +41,7 @@ function App() {
         </Route>
         <Route path="/listings" component={ListingPage} />
         <Route exact path="/createIssue" component={CreateIssueForm} />
-        <PrivateRoute exact path="/editIssue" component={EditIssueForm} />
+        <Route exact path="/editIssue" component={EditIssueForm} />
       </ContextObject.Provider>
     </Router>
   );
