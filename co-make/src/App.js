@@ -39,8 +39,8 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
-        <PrivateRoute path="/listings" component={ListingPage} />
-        <PrivateRoute exact path="/createIssue" component={CreateIssueForm} />
+        <Route path="/listings" component={ListingPage} />
+        <Route exact path="/createIssue" component={CreateIssueForm} />
         <PrivateRoute exact path="/editIssue" component={EditIssueForm} />
       </ContextObject.Provider>
     </Router>

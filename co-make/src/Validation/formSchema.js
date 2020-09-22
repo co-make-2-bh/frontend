@@ -6,4 +6,8 @@ const formSchema = yup.object().shape({
     fullName: yup.string().min(3,'Please etner name that is longer than 2 characters').required('Please etner name that is longer than 2 characters'),
 });
 
+
+
+
+
 export default formSchema;

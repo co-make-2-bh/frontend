@@ -43,7 +43,9 @@ const Login = (props) => {
     evt.preventDefault();
     axios
       .post("", formValues)
-      .then((res) => {})
+      .then((res) => {
+        // Need history.push history.push("/register"); --- test it out when we get the backend link -- or we can use the <Link Route
+      })
       .catch((err) => {
         console.log(err);
       })
