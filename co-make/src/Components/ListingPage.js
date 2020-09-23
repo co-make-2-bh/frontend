@@ -1,33 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import ListingCard from "./ListingCard";
-// import styled from "styled-components";
-import { ListingStyle, StyledH1} from '../styles/EverythingElseStyles';
-
-/////////////////////////////
-//      LISTING STYLE      //
-/////////////////////////////
-// export const ListingStyle = styled.div`
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-//   color: #21333e;
-// `;
-
-// export const StyledH1 = styled.h1`
-//   font-family: "Poppins", sans-serif;
-//   font-weight: 900;
-//   font-size: 48px;
-//   padding-top: 2%;
-//   color: #21333e;
-//   text-align: center;
-// `;
-////////////////////////////
-//      LISTING CODE      //
-////////////////////////////
+import { ContextObject } from "../contexts/context";
+import { ListingStyle, StyledH1 } from "../styles/EverythingElseStyles";
+import PrivateRoute from "../utils/PrivateRoute";
 
 function ListingPage(props) {
+  const { issues } = useContext(ContextObject);
   const history = useHistory();
 
   const addIssue = () => {
@@ -39,8 +18,19 @@ function ListingPage(props) {
       <StyledH1>Community Listing Page.</StyledH1>
       <p>Welcome to the community! Let your voice be heard.</p>
       <button onClick={addIssue}>Add an issue</button>
-      <ListingCard />
-      <ListingCard />
+      <br />
+      {issues &&
+        issues.map((issue) => {
+          return (
+            <ListingCard
+              title={issue.title}
+              description={issue.description}
+              issue={issue}
+              key={issue.issueid}
+              issueId={issue.issueid}
+            />
+          );
+        })}
     </ListingStyle>
   );
 }

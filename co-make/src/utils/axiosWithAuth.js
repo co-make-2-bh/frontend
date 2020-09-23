@@ -7,8 +7,7 @@ const axiosWithAuth = () => {
     headers: {
       Authorization: window.localStorage.getItem("token"),
     },
-    baseURL: "",
+    baseURL: "https://bw-comakeapp-java.herokuapp.com/",
   });
-  //add other axios items here - .post .put .delete etc
 };
 export default axiosWithAuth;

@@ -1,13 +1,57 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-
-import { CardStyle, ListingStyle, StyledH1 } from '../styles/EverythingElseStyles'
-
-// import { CardStyle } from "./ListingCard";
-// import { ListingStyle, StyledH1 } from "./ListingPage";
+import React, { useState, useEffect, useContext } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import axiosWithAuth from "../utils/axiosWithAuth";
+import { ContextObject } from "../contexts/context";
+import {
+  CardStyle,
+  ListingStyle,
+  StyledH1,
+} from "../styles/EverythingElseStyles";
 
 export default function EditIssueForm() {
+  const initialValues = {
+    title: "",
+    name: "",
+    description: "",
+  };
+  const { issues, addIssues, getIssues } = useContext(ContextObject);
+  const [formValues, setFormValues] = useState(initialValues);
   const history = useHistory();
+  const params = useParams();
+  const id = params.id;
+  console.log("test", formValues);
+  useEffect(() => {
+    axiosWithAuth()
+      .get(`/issues/issue/${id}`)
+      .then((response) => {
+        console.log("edit", response);
+        setFormValues(response.data);
+      });
+  }, [issues, id]);
+
+  const formSubmit = (event) => {
+    event.preventDefault();
+    axiosWithAuth()
+      .put(`/issues/issue/${id}`, {
+        title: formValues.title,
+        description: formValues.description,
+      })
+      .then((response) => {
+        addIssues([response.data, ...issues]);
+        console.log("editform", response.data);
+        getIssues();
+        history.push(`/listings`);
+      })
+      .catch((error) => {
+        // console.log(error.response.data);
+        alert(
+          `Oops.. Looks like there was an error. ${error.response.data.message}`
+        );
+      })
+      .finally(() => {
+        setFormValues(initialValues);
+      });
+  };
 
   return (
     <ListingStyle>
@@ -20,10 +64,10 @@ export default function EditIssueForm() {
         >
           Back
         </button>
-        <form>
+        <form onSubmit={formSubmit}>
           <label htmlFor="title">
             Title:
-            <input type="text" name="title" />
+            <input type="text" name="title" defaultValue={formValues.title} />
           </label>
           <label htmlFor="name">
             Your name:
@@ -36,6 +80,7 @@ export default function EditIssueForm() {
               rows="20"
               style={{ resize: "none" }}
               name="description"
+              defaultValue={formValues.description}
             />
           </label>
           <button>Submit</button>

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
+import axiosWithAuth from "./utils/axiosWithAuth";
 
 import Header from "./Components/Header";
 import CreateIssueForm from "./Components/CreateIssueForm";
@@ -9,29 +10,39 @@ import ListingPage from "./Components/ListingPage";
 import Login from "./Components/LoginForm";
 import Register from "./Components/RegisterForm";
 import { ContextObject } from "./contexts/context";
-// import { StyledH1 } from "./Components/ListingPage";
-import { StyledH1 } from './styles/EverythingElseStyles';
+import { StyledH1 } from "./styles/EverythingElseStyles";
 
 function App() {
-  // axiosWithAuth()
-  //   .get("/api")
-  //   .then((res) => console.log(res))
-  //   .catch((err) => console.log(err));
+  const [issues, addIssues] = useState([]);
+  const [username, setUsername] = useState("");
+  const [upvote, setUpvote] = useState(0);
 
-  // useEffect(() => {
-  //     axios.get(``)
-  //     // .then((res) => {
-  //     //   console.log(res.data);
-  //     //   setListItem(res.data);
-  //     // })
-  //     // .catch((error) => {
-  //     //   console.log("Error retrieving data");
-  //     // });
-  //   }, []);
+  const getIssues = () => {
+    axiosWithAuth()
+      .get("issues/issues")
+      .then((res) => {
+        addIssues(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getIssues();
+  }, []);
 
   return (
     <Router>
-      <ContextObject.Provider>
+      <ContextObject.Provider
+        value={{
+          issues,
+          addIssues,
+          username,
+          setUsername,
+          getIssues,
+          upvote,
+          setUpvote,
+        }}
+      >
         <Header />
         <Route exact path="/">
           <StyledH1>Login Page</StyledH1>
@@ -40,9 +51,9 @@ function App() {
         <Route path="/register">
           <Register />
         </Route>
-        <Route path="/listings" component={ListingPage} />
-        <Route exact path="/createIssue" component={CreateIssueForm} />
-        <Route exact path="/editIssue" component={EditIssueForm} />
+        <PrivateRoute path="/listings" component={ListingPage} />
+        <PrivateRoute exact path="/createIssue" component={CreateIssueForm} />
+        <PrivateRoute exact path="/editIssue:id" component={EditIssueForm} />
       </ContextObject.Provider>
     </Router>
   );
