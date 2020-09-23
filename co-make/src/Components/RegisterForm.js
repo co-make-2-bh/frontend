@@ -29,27 +29,25 @@ const Register = (props) => {
   const onChange = (evt) => {
     evt.persist();
     const { name, value } = evt.target;
-    // validateChange(name, value);
+    validateChange(name, value);
     setFormValues({ ...formValues, [name]: value });
   };
 
   const validateChange = (name, value) => {
-    // yup
-    //   .reach(formSchema, name)
-    //   .validate(value)
-    //   .then((valid) => {
-    //     setErrors({ ...errors, [name]: "" });
-    //   })
-    //   .catch((err) => {
-    //     setErrors({ ...errors, [name]: err.errors[0] });
-    //   });
+    yup
+      .reach(formSchema, name)
+      .validate(value)
+      .then((valid) => {
+        setErrors({ ...errors, [name]: "" });
+      })
+      .catch((err) => {
+        setErrors({ ...errors, [name]: err.errors[0] });
+      });
   };
 
   const onSubmit = (evt) => {
     evt.preventDefault();
     axios
-      // '/createnewuser' got me a 404
-      // https://bw-comakeapp-java.herokuapp.com/createnewuser got me a 500
       .post("https://bw-comakeapp-java.herokuapp.com/createnewuser", {
         username: formValues.username,
         phone: formValues.phone,
@@ -57,7 +55,6 @@ const Register = (props) => {
         primaryemail: formValues.primaryemail,
       })
       .then((res) => {
-        console.log("reg values", res);
         history.push("/");
       })
       .catch((err) => {
@@ -71,9 +68,9 @@ const Register = (props) => {
 
   /////SIDE EFFECTS/////
   useEffect(() => {
-    // formSchema.isValid(formValues).then((valid) => {
-    //   setButtonDisabled(!valid);
-    // });
+    formSchema.isValid(formValues).then((valid) => {
+      setButtonDisabled(!valid);
+    });
   }, [formValues]);
 
   return (
@@ -123,8 +120,7 @@ const Register = (props) => {
             />
           </label>
           <br></br>
-          {/* disabled={buttonDisabled} */}
-          <button>Register</button>
+          <button disabled={buttonDisabled}>Register</button>
           <div className="errors">
             <p>{errors.fullName}</p>
             <p>{errors.username}</p>

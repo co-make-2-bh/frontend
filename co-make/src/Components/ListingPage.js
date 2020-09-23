@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import ListingCard from "./ListingCard";
 import { ContextObject } from "../contexts/context";
 import { ListingStyle, StyledH1 } from "../styles/EverythingElseStyles";
-import PrivateRoute from "../utils/PrivateRoute";
 
 function ListingPage(props) {
   const { issues } = useContext(ContextObject);

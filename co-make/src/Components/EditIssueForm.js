@@ -20,6 +20,7 @@ export default function EditIssueForm() {
   const params = useParams();
   const id = params.id;
   console.log("test", formValues);
+
   useEffect(() => {
     axiosWithAuth()
       .get(`/issues/issue/${id}`)
@@ -38,12 +39,11 @@ export default function EditIssueForm() {
       })
       .then((response) => {
         addIssues([response.data, ...issues]);
-        console.log("editform", response.data);
+        console.log("editform", issues);
         getIssues();
         history.push(`/listings`);
       })
       .catch((error) => {
-        // console.log(error.response.data);
         alert(
           `Oops.. Looks like there was an error. ${error.response.data.message}`
         );
@@ -51,6 +51,12 @@ export default function EditIssueForm() {
       .finally(() => {
         setFormValues(initialValues);
       });
+  };
+
+  const onChange = (evt) => {
+    const { name, value } = evt.target;
+    // validateChange(name, value);
+    setFormValues({ ...formValues, [name]: value });
   };
 
   return (
@@ -67,7 +73,13 @@ export default function EditIssueForm() {
         <form onSubmit={formSubmit}>
           <label htmlFor="title">
             Title:
-            <input type="text" name="title" defaultValue={formValues.title} />
+            <input
+              type="text"
+              name="title"
+              defaultValue={formValues.title}
+              value={formValues.title}
+              onChange={onChange}
+            />
           </label>
           <label htmlFor="name">
             Your name:
@@ -81,6 +93,8 @@ export default function EditIssueForm() {
               style={{ resize: "none" }}
               name="description"
               defaultValue={formValues.description}
+              value={formValues.description}
+              onChange={onChange}
             />
           </label>
           <button>Submit</button>

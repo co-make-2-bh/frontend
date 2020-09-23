@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import formSchema from "../Validation/formSchema";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-import { ContextObject } from "../contexts/context";
 import { ListingStyle, CardStyle } from "../styles/EverythingElseStyles";
 
-const Login = (props) => {
+const Login = () => {
   /////INITAL STATES/////
   const initialValues = {
     username: "",
@@ -19,8 +18,9 @@ const Login = (props) => {
   const initialErrors = {
     username: "",
     password: "",
+    phone: "",
+    primaryemail: "",
   };
-  const { setUsername, getIssues } = useContext(ContextObject);
   const [formValues, setFormValues] = useState(initialValues);
   const [errors, setErrors] = useState(initialErrors);
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -30,20 +30,20 @@ const Login = (props) => {
   const onChange = (evt) => {
     evt.persist();
     const { name, value } = evt.target;
-    // validateChange(name, value);
+    validateChange(name, value);
     setFormValues({ ...formValues, [name]: value });
   };
 
   const validateChange = (name, value) => {
-    // yup
-    //   .reach(formSchema, name)
-    //   .validate(value)
-    //   .then((valid) => {
-    //     setErrors({ ...errors, [name]: "" });
-    //   })
-    //   .catch((err) => {
-    //     setErrors({ ...errors, [name]: err.errors[0] });
-    //   });
+    yup
+      .reach(formSchema, name)
+      .validate(value)
+      .then((valid) => {
+        setErrors({ ...errors, [name]: "" });
+      })
+      .catch((err) => {
+        setErrors({ ...errors, [name]: err.errors[0] });
+      });
   };
 
   const onSubmit = (evt) => {
@@ -123,8 +123,9 @@ const Login = (props) => {
             />
           </label>
           <br></br>
-          {/* disabled={buttonDisabled} */}
-          <button type="submit">Login</button>
+          <button type="submit" disabled={buttonDisabled}>
+            Login
+          </button>
           <Link to="/register">
             <button>Register</button>
           </Link>

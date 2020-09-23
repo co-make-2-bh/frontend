@@ -97,7 +97,7 @@ export default function CreateIssueForm() {
               onChange={onChange}
             />
           </label>
-          <label htmlFor="name">
+          {/* <label htmlFor="name">
             Your name:
             <input
               type="text"
@@ -105,7 +105,7 @@ export default function CreateIssueForm() {
               value={formValues.name}
               onChange={onChange}
             />
-          </label>
+          </label> */}
           <label htmlFor="description">
             Description:
             <textarea

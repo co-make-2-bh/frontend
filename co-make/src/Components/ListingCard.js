@@ -6,7 +6,7 @@ import { ContextObject } from "../contexts/context";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
 function ListingCard(props) {
-  const { issue, title, description, issueId } = props;
+  const { title, description, issueId } = props;
 
   const { getIssues } = useContext(ContextObject);
   const [upvote, setUpvote] = useState(0);
@@ -36,7 +36,7 @@ function ListingCard(props) {
       <h4>Description: </h4>
       <p>{description}</p>
       <p>{upvote} votes</p>
-      <Upvote upvote={upvote} setUpvote={setUpvote} />
+      <Upvote upvote={upvote} setUpvote={setUpvote} id={issueId} />
       <button onClick={editIssue}>Edit</button>
       <button onClick={() => deleteIssue(issueId)}>Delete</button>
     </CardStyle>
