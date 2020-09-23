@@ -3,10 +3,13 @@ import axios from "axios";
 import formSchema from "../Validation/formSchema";
 import * as yup from "yup";
 import { useHistory } from "react-router-dom";
+import careIcon from "../assets/care-icon.png";
 import {
   ListingStyle,
   CardStyle,
   StyledH1,
+  FormStyle,
+  ImageStyle,
 } from "../styles/EverythingElseStyles";
 
 const Register = (props) => {
@@ -82,7 +85,9 @@ const Register = (props) => {
       <StyledH1>Register</StyledH1>
       <br />
       <CardStyle>
-        <form onSubmit={onSubmit}>
+        <ImageStyle src={careIcon} alt="" />
+      
+        <FormStyle onSubmit={onSubmit}>
           <label>
             <input
               type="text"
@@ -131,7 +136,8 @@ const Register = (props) => {
             <p>{errors.username}</p>
             <p>{errors.password}</p>
           </div>
-        </form>
+        </FormStyle>
+        
       </CardStyle>
     </ListingStyle>
   );
