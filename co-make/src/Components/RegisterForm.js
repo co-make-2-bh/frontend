@@ -136,7 +136,7 @@ const Register = (props) => {
             />
           </label>
           <br></br>
-          <ButtonHover disabled={buttonDisabled}>Register</ButtonHover>
+          <ButtonHover className='registerButton' disabled={buttonDisabled}>Register</ButtonHover>
           <ErrorStyle className="errors">
             <p>{errors.username}</p>
             <p>{errors.password}</p>

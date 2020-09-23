@@ -126,7 +126,7 @@ const Login = () => {
             />
           </label>
           <br></br>
-          <ButtonHover type="submit" disabled={buttonDisabled}>
+          <ButtonHover className='loginButton' type="submit" disabled={buttonDisabled}>
             Login
           </ButtonHover>
           
