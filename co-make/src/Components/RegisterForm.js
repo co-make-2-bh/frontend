@@ -3,7 +3,11 @@ import axios from "axios";
 import formSchema from "../Validation/formSchema";
 import * as yup from "yup";
 import { useHistory } from "react-router-dom";
-import { ListingStyle, CardStyle } from "../styles/EverythingElseStyles";
+import {
+  ListingStyle,
+  CardStyle,
+  StyledH1,
+} from "../styles/EverythingElseStyles";
 
 const Register = (props) => {
   /////INITAL STATES/////
@@ -75,6 +79,7 @@ const Register = (props) => {
 
   return (
     <ListingStyle>
+      <StyledH1>Register</StyledH1>
       <br />
       <CardStyle>
         <form onSubmit={onSubmit}>
