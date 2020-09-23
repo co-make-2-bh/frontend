@@ -1,4 +1,5 @@
 import React from "react";
+import { ButtonHover } from "../styles/EverythingElseStyles";
 
 export default function Upvote(props) {
   const { upvote, setUpvote } = props;
@@ -9,5 +10,5 @@ export default function Upvote(props) {
     setUpvote(count);
   };
 
-  return <button onClick={upvotePost}>Upvote</button>;
+  return <ButtonHover onClick={upvotePost}>Upvote</ButtonHover>;
 }

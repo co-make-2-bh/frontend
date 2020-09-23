@@ -80,6 +80,33 @@ export const ErrorStyle = styled.div`
   margin-top: 20px;
 `
 
+///////////////////////////
+//      LISTING STYLE     //
+///////////////////////////
+
+export const ButtonStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`
+
+export const ButtonHover = styled.button`
+  &:hover {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    transition-duration: 0.2s; 
+  }
+`
+
+export const ButtonHover2 = styled.button`
+  &:hover {
+    background-color: ${colorObj.darkBlue};
+    color: white;
+    border: 1px solid white;
+    transition-duration: 0.2s; 
+  }
+`
 
 
 

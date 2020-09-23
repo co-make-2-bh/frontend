@@ -47,7 +47,7 @@ button {
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1px;
-  border: none;
+  border: 1px solid #cce3dd;
   padding: 10px 12px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);

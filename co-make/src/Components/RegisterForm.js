@@ -10,6 +10,8 @@ import {
   StyledH1,
   FormStyle,
   ImageStyle,
+  ErrorStyle,
+  ButtonHover,
 } from "../styles/EverythingElseStyles";
 
 const Register = (props) => {
@@ -134,13 +136,13 @@ const Register = (props) => {
             />
           </label>
           <br></br>
-          <button disabled={buttonDisabled}>Register</button>
-          <div className="errors">
+          <ButtonHover disabled={buttonDisabled}>Register</ButtonHover>
+          <ErrorStyle className="errors">
             <p>{errors.username}</p>
             <p>{errors.password}</p>
             <p>{errors.phone}</p>
             <p>{errors.primaryemail}</p>
-          </div>
+          </ErrorStyle>
         </FormStyle>
         
       </CardStyle>

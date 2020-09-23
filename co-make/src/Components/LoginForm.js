@@ -4,7 +4,7 @@ import formSchema from "../Validation/formSchema";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-import { ListingStyle, CardStyle, FormStyle, ErrorStyle, ImageStyle} from "../styles/EverythingElseStyles";
+import { ListingStyle, CardStyle, FormStyle, ErrorStyle, ImageStyle, ButtonHover} from "../styles/EverythingElseStyles";
 import careIcon from "../assets/care-icon.png";
 
 const Login = () => {
@@ -126,16 +126,16 @@ const Login = () => {
             />
           </label>
           <br></br>
-          <button type="submit" disabled={buttonDisabled}>
+          <ButtonHover type="submit" disabled={buttonDisabled}>
             Login
-          </button>
+          </ButtonHover>
           
           <Link to="/register">
-            <button
-              style={{ color: '#21333e', border: "none", background: "none", boxShadow: '0px', backgroundColor: '#cce3dd' }}
+            <ButtonHover
+              // style={{ color: '#21333e', border: "none", background: "none", boxShadow: '0px', backgroundColor: '#cce3dd' }}
             >
               Don't have an account? Sign up
-            </button>
+            </ButtonHover>
           </Link>
           <ErrorStyle className="errorMessage">
             <p>{errors.username}</p>
