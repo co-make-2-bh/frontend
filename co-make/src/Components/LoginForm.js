@@ -127,7 +127,11 @@ const Login = () => {
             Login
           </button>
           <Link to="/register">
-            <button>Register</button>
+            <button
+              style={{ color: "white", border: "none", background: "none" }}
+            >
+              Don't have an account? Sign up
+            </button>
           </Link>
           <div className="errors">
             <p>{errors.username}</p>
