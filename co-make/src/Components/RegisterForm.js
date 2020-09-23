@@ -61,6 +61,7 @@ const Register = (props) => {
         password: formValues.password,
         primaryemail: formValues.primaryemail,
       })
+      
       .then((res) => {
         history.push("/");
       })
@@ -91,17 +92,6 @@ const Register = (props) => {
           <label>
             <input
               type="text"
-              name="phone"
-              placeholder="enter full phone"
-              value={formValues.phone}
-              onChange={onChange}
-            />
-          </label>
-          <br></br>
-
-          <label>
-            <input
-              type="text"
               name="username"
               placeholder="username"
               value={formValues.username}
@@ -109,7 +99,7 @@ const Register = (props) => {
             />
           </label>
           <br></br>
-
+          
           <label>
             <input
               type="password"
@@ -119,7 +109,21 @@ const Register = (props) => {
               onChange={onChange}
             />
           </label>
+
           <br></br>
+
+          <label>
+            <input
+              type="text"
+              name="phone"
+              placeholder="phone"
+              value={formValues.phone}
+              onChange={onChange}
+            />
+          </label>
+          <br></br>
+
+
           <label>
             <input
               type="text"
@@ -132,9 +136,10 @@ const Register = (props) => {
           <br></br>
           <button disabled={buttonDisabled}>Register</button>
           <div className="errors">
-            <p>{errors.fullName}</p>
             <p>{errors.username}</p>
             <p>{errors.password}</p>
+            <p>{errors.phone}</p>
+            <p>{errors.primaryemail}</p>
           </div>
         </FormStyle>
         
