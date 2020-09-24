@@ -7,6 +7,7 @@ import {
   ListingStyle,
   StyledH1,
   ButtonHover,
+  ErrorColor,
 } from "../styles/EverythingElseStyles";
 
 import * as yup from "yup";
@@ -123,9 +124,9 @@ export default function CreateIssueForm() {
             Submit
           </ButtonHover>
           <div className="errorMessage">
-            <p>{errors.title}</p>
-            <p>{errors.name}</p>
-            <p>{errors.description}</p>
+            <ErrorColor>{errors.title}</ErrorColor>
+            <ErrorColor>{errors.name}</ErrorColor>
+            <ErrorColor>{errors.description}</ErrorColor>
           </div>
         </form>
       </CardStyle>

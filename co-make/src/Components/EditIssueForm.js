@@ -78,7 +78,7 @@ export default function EditIssueForm() {
               type="text"
               name="title"
               placeholder='Edit title here'
-              defaultValue={formValues.title}
+              // defaultValue={formValues.title}
               value={formValues.title}
               onChange={onChange}
             />
@@ -91,7 +91,7 @@ export default function EditIssueForm() {
               rows="20"
               style={{ resize: "none" }}
               name="description"
-              defaultValue={formValues.description}
+              // defaultValue={formValues.description}
               value={formValues.description}
               onChange={onChange}
             />

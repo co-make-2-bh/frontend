@@ -79,6 +79,9 @@ export const FormStyle = styled.form`
 export const ErrorStyle = styled.div`
   margin-top: 20px;
 `
+export const ErrorColor = styled.p`
+  color: ${colorObj.darkBlue};
+`
 
 ///////////////////////////
 //      LISTING STYLE     //
