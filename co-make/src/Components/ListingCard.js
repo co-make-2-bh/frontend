@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { CardStyle } from "../styles/EverythingElseStyles";
+import { CardStyle, ButtonStyle, ButtonHover} from "../styles/EverythingElseStyles";
 import { useHistory } from "react-router-dom";
 import Upvote from "./Upvote";
 import { ContextObject } from "../contexts/context";
@@ -36,9 +36,13 @@ function ListingCard(props) {
       <h4>Description: </h4>
       <p>{description}</p>
       <p>{upvote} votes</p>
+
+    <ButtonStyle>
       <Upvote upvote={upvote} setUpvote={setUpvote} id={issueId} />
-      <button onClick={editIssue}>Edit</button>
-      <button onClick={() => deleteIssue(issueId)}>Delete</button>
+      <ButtonHover onClick={editIssue}>Edit</ButtonHover>
+      <ButtonHover onClick={() => deleteIssue(issueId)}>Delete</ButtonHover>
+    </ButtonStyle>
+
     </CardStyle>
   );
 }

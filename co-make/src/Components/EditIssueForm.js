@@ -6,6 +6,7 @@ import {
   CardStyle,
   ListingStyle,
   StyledH1,
+  ButtonHover,
 } from "../styles/EverythingElseStyles";
 
 export default function EditIssueForm() {
@@ -63,28 +64,26 @@ export default function EditIssueForm() {
     <ListingStyle>
       <StyledH1>Edit Issue</StyledH1>
       <CardStyle>
-        <button
+        <ButtonHover
           onClick={() => {
             history.push("/listings");
           }}
         >
           Back
-        </button>
+        </ButtonHover>
         <form onSubmit={formSubmit}>
           <label htmlFor="title">
-            Title:
+            {/* Title: */}
             <input
               type="text"
               name="title"
-              defaultValue={formValues.title}
+              placeholder='Edit title here'
+              // defaultValue={formValues.title}
               value={formValues.title}
               onChange={onChange}
             />
           </label>
-          <label htmlFor="name">
-            Your name:
-            <input type="text" name="name" />
-          </label>
+          
           <label htmlFor="description">
             Description:
             <textarea
@@ -92,12 +91,12 @@ export default function EditIssueForm() {
               rows="20"
               style={{ resize: "none" }}
               name="description"
-              defaultValue={formValues.description}
+              // defaultValue={formValues.description}
               value={formValues.description}
               onChange={onChange}
             />
           </label>
-          <button>Submit</button>
+          <ButtonHover>Submit</ButtonHover>
         </form>
       </CardStyle>
     </ListingStyle>

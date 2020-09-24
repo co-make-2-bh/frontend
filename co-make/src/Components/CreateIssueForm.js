@@ -6,6 +6,8 @@ import {
   CardStyle,
   ListingStyle,
   StyledH1,
+  ButtonHover,
+  ErrorColor,
 } from "../styles/EverythingElseStyles";
 
 import * as yup from "yup";
@@ -80,19 +82,20 @@ export default function CreateIssueForm() {
     <ListingStyle>
       <StyledH1>Add New Issue</StyledH1>
       <CardStyle>
-        <button
+        <ButtonHover
           onClick={() => {
             history.push("/listings");
           }}
         >
           Back
-        </button>
+        </ButtonHover>
         <form onSubmit={formSubmit}>
           <label htmlFor="title">
-            Title:
+            
             <input
               type="text"
               name="title"
+              placeholder="Enter title here"
               value={formValues.title}
               onChange={onChange}
             />
@@ -117,13 +120,13 @@ export default function CreateIssueForm() {
               onChange={onChange}
             />
           </label>
-          <button type="submit" disabled={buttonDisabled}>
+          <ButtonHover type="submit" disabled={buttonDisabled}>
             Submit
-          </button>
+          </ButtonHover>
           <div className="errorMessage">
-            <p>{errors.title}</p>
-            <p>{errors.name}</p>
-            <p>{errors.description}</p>
+            <ErrorColor>{errors.title}</ErrorColor>
+            <ErrorColor>{errors.name}</ErrorColor>
+            <ErrorColor>{errors.description}</ErrorColor>
           </div>
         </form>
       </CardStyle>

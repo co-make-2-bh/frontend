@@ -57,7 +57,9 @@ export const CardStyle = styled.div`
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  color: ${colorObj.darkBlue};
+  color: white;
+  text-align: center;
+
 `;
 export const TextItem = styled.div`
   ${"" /* display: flex;
@@ -65,6 +67,49 @@ export const TextItem = styled.div`
   justify-content: flex-start;
   align-items: center; */}
 `;
+
+///////////////////////////
+//      LOGIN FORM     //
+///////////////////////////
+
+export const FormStyle = styled.form`
+  margin-top: 55px;
+`
+
+export const ErrorStyle = styled.div`
+  margin-top: 20px;
+`
+export const ErrorColor = styled.p`
+  color: ${colorObj.darkBlue};
+`
+
+///////////////////////////
+//      LISTING STYLE     //
+///////////////////////////
+
+export const ButtonStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`
+
+export const ButtonHover = styled.button`
+  &:hover {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    transition-duration: 0.2s; 
+  }
+`
+
+export const ButtonHover2 = styled.button`
+  &:hover {
+    background-color: ${colorObj.darkBlue};
+    color: white;
+    border: 1px solid white;
+    transition-duration: 0.2s; 
+  }
+`
 
 
 

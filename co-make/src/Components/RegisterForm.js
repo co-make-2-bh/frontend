@@ -3,10 +3,15 @@ import axios from "axios";
 import formSchema from "../Validation/formSchema";
 import * as yup from "yup";
 import { useHistory } from "react-router-dom";
+import careIcon from "../assets/care-icon.png";
 import {
   ListingStyle,
   CardStyle,
   StyledH1,
+  FormStyle,
+  ImageStyle,
+  ErrorStyle,
+  ButtonHover,
 } from "../styles/EverythingElseStyles";
 
 const Register = (props) => {
@@ -58,6 +63,7 @@ const Register = (props) => {
         password: formValues.password,
         primaryemail: formValues.primaryemail,
       })
+      
       .then((res) => {
         history.push("/");
       })
@@ -82,18 +88,9 @@ const Register = (props) => {
       <StyledH1>Register</StyledH1>
       <br />
       <CardStyle>
-        <form onSubmit={onSubmit}>
-          <label>
-            <input
-              type="text"
-              name="phone"
-              placeholder="enter full phone"
-              value={formValues.phone}
-              onChange={onChange}
-            />
-          </label>
-          <br></br>
-
+        <ImageStyle src={careIcon} alt="" />
+      
+        <FormStyle onSubmit={onSubmit}>
           <label>
             <input
               type="text"
@@ -104,7 +101,7 @@ const Register = (props) => {
             />
           </label>
           <br></br>
-
+          
           <label>
             <input
               type="password"
@@ -114,7 +111,21 @@ const Register = (props) => {
               onChange={onChange}
             />
           </label>
+
           <br></br>
+
+          <label>
+            <input
+              type="text"
+              name="phone"
+              placeholder="phone"
+              value={formValues.phone}
+              onChange={onChange}
+            />
+          </label>
+          <br></br>
+
+
           <label>
             <input
               type="text"
@@ -125,13 +136,15 @@ const Register = (props) => {
             />
           </label>
           <br></br>
-          <button disabled={buttonDisabled}>Register</button>
-          <div className="errors">
-            <p>{errors.fullName}</p>
+          <ButtonHover className='registerButton' disabled={buttonDisabled}>Register</ButtonHover>
+          <ErrorStyle className="errors">
             <p>{errors.username}</p>
             <p>{errors.password}</p>
-          </div>
-        </form>
+            <p>{errors.phone}</p>
+            <p>{errors.primaryemail}</p>
+          </ErrorStyle>
+        </FormStyle>
+        
       </CardStyle>
     </ListingStyle>
   );

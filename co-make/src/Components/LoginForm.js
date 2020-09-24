@@ -4,7 +4,8 @@ import formSchema from "../Validation/formSchema";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-import { ListingStyle, CardStyle } from "../styles/EverythingElseStyles";
+import { ListingStyle, CardStyle, FormStyle, ErrorStyle, ImageStyle, ButtonHover} from "../styles/EverythingElseStyles";
+import careIcon from "../assets/care-icon.png";
 
 const Login = () => {
   /////INITAL STATES/////
@@ -82,7 +83,9 @@ const Login = () => {
     <ListingStyle>
       <br />
       <CardStyle>
-        <form onSubmit={onSubmit}>
+      <ImageStyle src={careIcon} alt="" />
+        
+        <FormStyle onSubmit={onSubmit}>
           <label>
             <input
               type="text"
@@ -123,21 +126,25 @@ const Login = () => {
             />
           </label>
           <br></br>
-          <button type="submit" disabled={buttonDisabled}>
+          <ButtonHover className='loginButton' type="submit" disabled={buttonDisabled}>
             Login
-          </button>
+          </ButtonHover>
+          
           <Link to="/register">
-            <button
-              style={{ color: "white", border: "none", background: "none" }}
+            <ButtonHover
+              // style={{ color: '#21333e', border: "none", background: "none", boxShadow: '0px', backgroundColor: '#cce3dd' }}
             >
               Don't have an account? Sign up
-            </button>
+            </ButtonHover>
           </Link>
-          <div className="errors">
+          <ErrorStyle className="errorMessage">
             <p>{errors.username}</p>
             <p>{errors.password}</p>
-          </div>
-        </form>
+            <p>{errors.phone}</p>
+            <p>{errors.primaryemail}</p>
+          </ErrorStyle>
+        </FormStyle>
+        
       </CardStyle>
     </ListingStyle>
   );

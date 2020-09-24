@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import ListingCard from "./ListingCard";
 import { ContextObject } from "../contexts/context";
-import { ListingStyle, StyledH1 } from "../styles/EverythingElseStyles";
+import { ListingStyle, StyledH1, ButtonHover2 } from "../styles/EverythingElseStyles";
 
 function ListingPage(props) {
   const { issues } = useContext(ContextObject);
@@ -16,7 +16,7 @@ function ListingPage(props) {
     <ListingStyle>
       <StyledH1>Community Listing Page.</StyledH1>
       <p>Welcome to the community! Let your voice be heard.</p>
-      <button onClick={addIssue}>Add an issue</button>
+      <ButtonHover2 onClick={addIssue}>Add an issue</ButtonHover2>
       <br />
       {issues &&
         issues.map((issue) => {
