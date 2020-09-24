@@ -5,7 +5,7 @@ import axios from "axios";
 const axiosWithAuth = () => {
   return axios.create({
     headers: {
-      Authorization: window.localStorage.getItem("token"),
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     baseURL: "https://bw-comakeapp-java.herokuapp.com/",
   });
